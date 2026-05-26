@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajay MathSphere – Premium Mathematics Mentorship (IIT-JEE & Boards)</title>
+  <!-- Beautiful Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            gold: {
+              50: '#FFFDF4',
+              100: '#FFF9D3',
+              200: '#F9E797',
+              300: '#EBD163',
+              400: '#D4AF37', // Perfect Royal Gold
+              500: '#B89830',
+              600: '#937821',
+              700: '#6E5915',
+              800: '#493A0B',
+              900: '#251D04',
+              950: '#120E02',
+            },
+            carbon: {
+              DEFAULT: '#0A0A0A',
+              card: '#121212',
+              inner: '#1E1E1E',
+              border: 'rgba(255, 255, 255, 0.08)',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #0A0A0A;
+      color: #FFFFFF;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    /* Modern Scrollbars */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0A0A0A;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1E1E1E;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #D4AF37;
+    }
+
+    /* Premium card shadows & custom layout */
+    .premium-card {
+      background-color: #121212;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .premium-card:hover {
+      border-color: rgba(212, 175, 55, 0.3);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    }
+    
+    .gold-glow {
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-gold-400 selection:text-black">
+
+  <!-- TOP HEADER BRANDING RAIL -->
+  <header class="border-b border-white/5 bg-[#121212] sticky top-0 z-50 backdrop-blur-md bg-opacity-95">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo Title -->
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-gold-400 rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(212,175,55,0.3)] select-none">
+          <span class="text-black font-extrabold text-lg font-mono">Σ</span>
+        </div>
+        <div>
+          <span class="font-display font-bold text-white tracking-tight text-sm md:text-base block uppercase">
+            MATH<span class="text-gold-400">ELITE</span> <span class="text-gold-400/85 text-[10px] uppercase font-mono px-1 font-bold">Premium HTML Base</span>
+          </span>
+          <span class="text-[9px] text-white/45 tracking-wider uppercase block font-mono">Ajay Mathematics Mentorship Series</span>
+        </div>
+      </div>
+
+      <!-- Quick Session Badge -->
+      <div class="flex items-center gap-4">
+        <div class="hidden md:flex items-center gap-2 bg-slate-900 border border-white/5 px-3 py-1.5 rounded-lg text-xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="text-white/70">Static DRM Server Active</span>
+        </div>
+        <button onclick="toggleFaq()" class="text-white/60 hover:text-gold-400 text-xs transition-colors flex items-center gap-1 font-mono">
+          <i data-lucide="help-circle" class="w-4 h-4"></i> HELP
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- BANNER ALERT FOR HTML VERSION -->
+  <div class="bg-gradient-to-r from-gold-950 via-black to-gold-950 border-b border-gold-900/45 py-3 px-4 text-center">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 text-xs">
+      <span class="bg-gold-400 text-black px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest">Standalone Release</span>
+      <p class="text-slate-200">
+        You are looking at the <b>Portable Pure-HTML & JS Website</b> for <span class="text-gold-400">Ajay MathSphere</span>. Standard interactive modes, lecture notes, mock test quizzes & Pomodoro are functional directly!
+      </p>
+    </div>
+  </div>
+
+  <!-- PORTAL GRID CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 md:px-6 py-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+    
+    <!-- LEFT NAVIGATION & STUDENT PATHWAY (4 cols) -->
+    <div class="lg:col-span-4 space-y-6">
+
+      <!-- MASTER INSTRUCTOR METADATA -->
+      <div class="premium-card rounded-2xl p-6 space-y-4">
+        <div class="flex items-center gap-4">
+          <div class="w-14 h-14 rounded-xl bg-gold-950 border border-gold-400/30 flex items-center justify-center font-bold text-2xl text-gold-400 font-display select-none">
+            AS
+          </div>
+          <div>
+            <span class="text-[10px] text-gold-400 uppercase tracking-widest font-mono block">Senior Academic Director</span>
+            <h2 class="text-xl font-display font-medium text-white tracking-tight">Ajay Sir</h2>
+            <p class="text-xs text-white/55">IIT Bombay Alumnus • Mentored 12+ Single Digit All India Ranks</p>
+          </div>
+        </div>
+
+        <div class="border-t border-white/5 pt-4 space-y-2.5 text-xs text-white/75">
+          <p class="italic leading-relaxed text-white/60">
+            "Calculus isn't memorized; it is violently visualized. Let's build your supreme IIT-JEE foundation."
+          </p>
+          <div class="pt-2 flex flex-wrap gap-2">
+            <span class="bg-white/5 border border-white/10 px-2 py-1 rounded text-[10px] font-mono">Limits & Series</span>
+            <span class="bg-white/5 border border-white/10 px-2 py-1 rounded text-[10px] font-mono">Coordinate Geometry</span>
+            <span class="bg-white/5 border border-white/10 px-2 py-1 rounded text-[10px] font-mono">NDA Hacks</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE MATH POMODORO STATION -->
+      <div class="premium-card rounded-2xl p-6 space-y-5">
+        <div class="flex justify-between items-center border-b border-white/5 pb-3">
+          <div class="flex items-center gap-2">
+            <i data-lucide="timer" class="text-gold-400 w-5 h-5"></i>
+            <h3 class="font-display font-semibold text-white text-sm uppercase tracking-wide">Deep-Work Station</h3>
+          </div>
+          <span id="pomo-status" class="bg-gold-950 text-gold-400 border border-gold-900/40 text-[9px] px-1.5 py-0.5 rounded uppercase font-mono font-bold tracking-widest">
+            Study Mode
+          </span>
+        </div>
+
+        <div class="text-center py-4">
+          <div id="pomo-clock" class="text-4xl md:text-5xl font-mono font-bold text-white tracking-widest leading-none drop-shadow-[0_0_10px_rgba(255,255,255,0.1)]">
+            25:00
+          </div>
+          <p class="text-[10px] text-white/40 mt-2 uppercase tracking-widest font-mono">Focus Block Remaining</p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button id="pomo-btn-trigger" onclick="togglePomodoro()" class="flex-1 py-2 bg-gold-400 hover:bg-gold-500 text-black font-extrabold text-xs uppercase rounded-lg transition-all active:scale-95 flex items-center justify-center gap-1">
+            <i data-lucide="play" class="w-3.5 h-3.5 fill-black"></i> <span id="pomo-btn-text">Start Block</span>
+          </button>
+          <button onclick="resetPomodoro()" class="p-2 border border-white/10 hover:border-white/30 rounded-lg text-white/60 hover:text-white transition-colors">
+            <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <p class="text-[10px] leading-relaxed text-white/40 italic text-center">
+          "Uninterrupted limits research improves competitive scoring thresholds." — Ajay Sir
+        </p>
+      </div>
+
+      <!-- AJAY SUPER-30 RANK LEADERBOARD -->
+      <div class="premium-card rounded-2xl p-6 space-y-4">
+        <div class="flex justify-between items-center border-b border-white/5 pb-3">
+          <h3 class="font-display font-semibold text-white text-xs uppercase tracking-widest">Ajay Super-30 Marks Board</h3>
+          <i data-lucide="award" class="text-gold-400 w-4 h-4"></i>
+        </div>
+
+        <div class="space-y-3 text-xs">
+          <!-- Rank 1 -->
+          <div class="flex items-center justify-between p-2 bg-white/[0.02] border border-white/5 rounded-lg">
+            <div class="flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-gold-950 border border-gold-500/40 text-gold-400 font-mono text-[10px] flex items-center justify-center font-bold">1</span>
+              <span class="font-medium text-white/90">Aryan Vardhan (AIR 4 Target)</span>
+            </div>
+            <span class="font-mono text-gold-400 font-bold">28,430 pts</span>
+          </div>
+
+          <!-- Rank 2 -->
+          <div class="flex items-center justify-between p-2 bg-white/[0.02] border border-white/5 rounded-lg">
+            <div class="flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-slate-900 text-slate-400 font-mono text-[10px] flex items-center justify-center">2</span>
+              <span class="font-medium text-white/80">Prisha Sharma (AIR 12 Target)</span>
+            </div>
+            <span class="font-mono text-slate-300">27,950 pts</span>
+          </div>
+
+          <!-- Rank 3 (Current user simulation) -->
+          <div class="flex items-center justify-between p-2 bg-gold-950/20 border border-gold-900/40 rounded-lg">
+            <div class="flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-gold-400 text-black font-mono text-[10px] flex items-center justify-center font-bold">18</span>
+              <span class="font-bold text-gold-400">Ajay Roy (You)</span>
+            </div>
+            <span class="font-mono text-gold-400 font-bold">21,450 pts</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT ACTIVE PANEL PLATFORM (8 cols) -->
+    <div class="lg:col-span-8 space-y-6">
+
+      <!-- WELCOME HERO COMPONENT -->
+      <div class="relative overflow-hidden rounded-2xl border border-gold-900/30 p-6 md:p-8 bg-gradient-to-br from-[#121212] via-[#0D0D0D] to-[#050505]">
+        <div class="absolute top-0 right-0 w-72 h-72 bg-gold-400/5 blur-3xl rounded-full -mr-16 -mt-16 pointer-events-none"></div>
+        
+        <div class="relative z-10 space-y-4 max-w-xl">
+          <div class="inline-flex items-center gap-1.5 bg-gold-950/80 text-gold-400 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest border border-gold-900/30">
+            <i data-lucide="sparkles" class="w-3 h-3"></i> Premium Academic System
+          </div>
+          
+          <h1 class="text-2xl md:text-3xl font-display font-medium text-white tracking-tight leading-snug">
+            Welcome to the Static <span class="text-gold-400 font-semibold">Ajay MathSphere</span> Portal
+          </h1>
+          <p class="text-xs md:text-sm text-white/60 leading-relaxed">
+            Access secure offline assignments, watermark-protected exam sheets, the dynamic limits handbook, and interactive AI Coaching simulation elements safely on any local server or static directory.
+          </p>
+
+          <div class="pt-2 flex flex-wrap gap-4 text-xs text-white/70">
+            <div class="flex items-center gap-1.5">
+              <i data-lucide="check-circle" class="w-4 h-4 text-gold-400"></i> Standard PDF DRM Activated
+            </div>
+            <div class="flex items-center gap-1.5">
+              <i data-lucide="check-circle" class="w-4 h-4 text-gold-400"></i> Interactive Self-Diagnostics
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PORTFLOW TABS -->
+      <div class="flex border-b border-white/5 gap-1 overflow-x-auto pb-px">
+        <button id="btn-tab-lectures" onclick="switchMainTab('lectures')" class="px-5 py-3 text-xs font-medium font-mono text-gold-400 border-b-2 border-gold-400 tracking-wider uppercase transition-colors shrink-0">
+          📚 Lectures & Study Sheets
+        </button>
+        <button id="btn-tab-doubts" onclick="switchMainTab('doubts')" class="px-5 py-3 text-xs font-medium font-mono text-white/60 hover:text-white hover:border-b-2 hover:border-white/20 tracking-wider uppercase transition-colors shrink-0">
+          🧠 Live AI Doubt Solver
+        </button>
+        <button id="btn-tab-quizzes" onclick="switchMainTab('quizzes')" class="px-5 py-3 text-xs font-medium font-mono text-white/60 hover:text-white hover:border-b-2 hover:border-white/20 tracking-wider uppercase transition-colors shrink-0">
+          📝 Interactive Test Engine
+        </button>
+      </div>
+
+      <!-- TAB CONTENT: LECTURES -->
+      <div id="tab-lectures" class="tab-segment space-y-6">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Course Card 1 -->
+          <div class="premium-card rounded-xl p-5 space-y-4">
+            <div class="relative h-32 rounded-lg bg-cover bg-center overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=800')">
+              <div class="absolute inset-0 bg-black/60 flex flex-col justify-end p-3">
+                <span class="bg-gold-500 text-black text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-sm w-max">Active Mentorship</span>
+              </div>
+            </div>
+            <div class="space-y-1">
+              <h4 class="font-display font-semibold text-white text-sm">Chanakya Calculus Mastery</h4>
+              <p class="text-[11px] text-white/55">Master standard Limit Series, Riemann Integrals and Leibniz formulas with Ajay Sir.</p>
+            </div>
+          </div>
+
+          <!-- Course Card 2 -->
+          <div class="premium-card rounded-xl p-5 space-y-4">
+            <div class="relative h-32 rounded-lg bg-cover bg-center overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&q=80&w=800')">
+              <div class="absolute inset-0 bg-black/60 flex flex-col justify-end p-3">
+                <span class="bg-slate-800 text-slate-300 text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-sm w-max">Premium Access</span>
+              </div>
+            </div>
+            <div class="space-y-1">
+              <h4 class="font-display font-semibold text-white text-sm">Siddhartha Vector Geometry</h4>
+              <p class="text-[11px] text-white/55">Complete foundational and advanced sessions covering 3D Line projections & Parabola.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LECTURES LIST -->
+        <div class="premium-card rounded-xl p-5 space-y-4">
+          <h3 class="font-display font-medium text-white text-sm flex items-center gap-2">
+            <i data-lucide="video" class="text-gold-400 w-4 h-4"></i> Recommended Syllabus Playlists
+          </h3>
+
+          <div class="divide-y divide-white/5 text-xs">
+            
+            <div class="py-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+              <div>
+                <span class="text-[9px] text-emerald-400 uppercase font-mono tracking-widest font-bold">Recorded Video</span>
+                <h4 class="font-semibold text-white/90">Lec 1: Limits Indeterminate Forms (0/0, ∞/∞)</h4>
+                <p class="text-slate-400 text-[10px]">Handwritten Calculus notes attached containing Ajay Sir's standard shortcuts.</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] text-white/40 font-mono">1 Hr 45 Mins</span>
+                <button onclick="revealPdf('pdf-1')" class="px-2.5 py-1 bg-gold-950 hover:bg-gold-900 text-gold-400 border border-gold-900/40 rounded transition-all">
+                  PDF Notes
+                </button>
+              </div>
+            </div>
+
+            <div class="py-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+              <div>
+                <span class="text-[9px] text-emerald-400 uppercase font-mono tracking-widest font-bold">Recorded Video</span>
+                <h4 class="font-semibold text-white/90">Lec 2: Squeeze Theorem & Newton-Leibniz Formula</h4>
+                <p class="text-slate-400 text-[10px]">Advanced Sandwich expansions with dual variable calculus proofs.</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] text-white/40 font-mono">2 Hrs 10 Mins</span>
+                <button onclick="revealPdf('pdf-2')" class="px-2.5 py-1 bg-gold-950 hover:bg-gold-900 text-gold-400 border border-gold-900/40 rounded transition-all">
+                  PDF Notes
+                </button>
+              </div>
+            </div>
+
+            <div class="py-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+              <div>
+                <span class="text-[9px] text-gold-400 uppercase font-mono tracking-widest font-bold">Upcoming Live Interactive Session</span>
+                <h4 class="font-semibold text-white">Lec 3: Continuity & Piecewise Formulations</h4>
+                <p class="text-slate-400 text-[10px] text-gold-400/80">Starts Today at 05:00 PM • Dynamic DRM Active</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] text-white/40 font-mono">2 Hrs 30 Mins</span>
+                <span class="px-2 py-1 bg-gold-400 text-black rounded text-[9px] font-bold uppercase tracking-wider">Scheduled</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- DRM PDF CONTROLLER SYSTEM -->
+        <div id="drm-panel" class="hidden premium-card rounded-xl p-6 space-y-4 border-2 border-gold-500/30 animate-fade-in bg-slate-950">
+          <div class="flex justify-between items-center border-b border-white/5 pb-3">
+            <div class="flex items-center gap-2 text-gold-400">
+              <i data-lucide="shield-check" class="w-5 h-5"></i>
+              <span class="font-display font-semibold text-xs uppercase tracking-wider">DRM Watermarked Document Vault</span>
+            </div>
+            <button onclick="closeDrm()" class="text-white/40 hover:text-white">
+              <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <div class="bg-[#121212] rounded-xl p-5 space-y-3 relative overflow-hidden border border-white/5">
+            <!-- Diagonal Watermark Overlay simulations -->
+            <div class="absolute inset-0 select-none pointer-events-none flex flex-col justify-around opacity-[0.04] text-white text-xs font-mono origin-center rotate-12 scale-125">
+              <div class="whitespace-nowrap">AJAY_JEE_USER_SESSION_DRM_PROTECTED</div>
+              <div class="whitespace-nowrap">AJAY_JEE_USER_SESSION_DRM_PROTECTED</div>
+              <div class="whitespace-nowrap">AJAY_JEE_USER_SESSION_DRM_PROTECTED</div>
+            </div>
+
+            <h4 id="drm-pdf-title" class="font-display font-medium text-white text-sm">HANDWRITTEN LIMITS MASTERCLASS NOTES</h4>
+            <div class="text-[11px] text-white/50 space-y-4 font-mono select-none pointer-events-auto leading-relaxed">
+              <p class="text-gold-400 font-bold border-b border-white/5 pb-1">AJAY SIR'S HIGH-SPEED CALCULUS CODES — SECURED SHEETS</p>
+              <p><b>Theorem 1 (Series Exponents):</b> When evaluating limit ratios involving exponentials, expand the series to quadratic order. Neglecting cubic offsets reduces error.</p>
+              <code class="block bg-black p-2 rounded text-[10px] text-emerald-400">
+                e^x &asymp; 1 + x + x²/2! + x³/3!
+              </code>
+              <p><b>Common Warning Trap:</b> Do NOT assume $\lim_{x \to 0} [f(x) \cdot g(x)] = \lim f(x) \cdot \lim g(x)$ if any sub-ratio contains infinite singularity. Break arguments carefully!</p>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between text-xs text-white/40 font-mono">
+            <span>Size: ~4.8 MB</span>
+            <span class="bg-red-950/40 text-red-400 px-2 py-1 rounded text-[10px] border border-red-900/30 font-bold uppercase">Watermarked & DRM Locked</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- TAB CONTENT: LIVE AI DOUBTS -->
+      <div id="tab-doubts" class="tab-segment hidden space-y-6">
+        <div class="premium-card rounded-xl p-6 space-y-5">
+          <div>
+            <span class="text-[9px] text-gold-400 font-mono font-bold uppercase tracking-widest block mb-1">Interactive AI Sandbox</span>
+            <h3 class="font-display font-medium text-white text-base">Ajay Sir's Digital Math Intelligence</h3>
+            <p class="text-xs text-white/55 leading-relaxed">
+              Input tough equations or JEE calculus puzzles. Our offline interactive state computes immediate step-by-step proofs using Ajay Sir's verified speed hacks.
+            </p>
+          </div>
+
+          <!-- Sandbox selection prompts -->
+          <div class="space-y-2">
+            <span class="text-[10px] text-slate-400 font-mono uppercase">Quick Practice Prompts:</span>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <button onclick="applyPrompt('Evaluate the limit of (sin x - x)/x^3 as x approaches 0 using Series approximation.')" class="bg-white/5 hover:bg-white/15 px-2.5 py-1.5 rounded-lg text-white/85 text-[11px] transition-colors">
+                Series approximation of limits
+              </button>
+              <button onclick="applyPrompt('Evaluate standard derivative limits for piecewise differentiable coordinate systems.')" class="bg-white/5 hover:bg-white/15 px-2.5 py-1.5 rounded-lg text-white/85 text-[11px] transition-colors">
+                Piecewise continuous limits
+              </button>
+            </div>
+          </div>
+
+          <div class="space-y-2.5">
+            <label class="text-xs text-white/70 block font-medium">State your mathematical question:</label>
+            <textarea id="ai-doubt-text" rows="3" class="w-full bg-slate-950 border border-white/5 p-4 rounded-xl text-xs text-white focus:outline-none focus:border-gold-400 font-mono" placeholder="State your IIT-JEE, NDA, or Board Calculus problem..."></textarea>
+          </div>
+
+          <button onclick="solveDoubt()" class="w-full py-3 bg-gradient-to-r from-gold-400 to-amber-500 hover:brightness-110 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider active:scale-95 transition-all flex items-center justify-center gap-2">
+            <i data-lucide="sparkles" class="w-4 h-4 text-black"></i> Submit doubt to Ajay Sir (AI Model)
+          </button>
+        </div>
+
+        <!-- SOLVED OUTPUT SECTION -->
+        <div id="ai-doubt-result-wrapper" class="hidden premium-card rounded-xl p-6 space-y-4 animate-fade-in bg-slate-950 border border-gold-900/35">
+          <div class="flex items-center justify-between border-b border-white/5 pb-3">
+            <span class="flex items-center gap-1.5 text-[10px] text-gold-400 font-mono font-bold uppercase tracking-widest bg-gold-950 px-2 py-0.5 rounded">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Math Brain Solved
+            </span>
+            <span class="text-[9px] text-white/40 font-mono">Solved by Ajay Sir's AI Clone</span>
+          </div>
+
+          <div class="space-y-4 max-w-none text-xs leading-relaxed text-white/85">
+            <div id="ai-doubt-output" class="font-sans space-y-3">
+              <!-- Dynamically hydrated inside JS -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- TAB CONTENT: INTERACTIVE QUIZZES -->
+      <div id="tab-quizzes" class="tab-segment hidden space-y-6">
+        
+        <div class="premium-card rounded-xl p-6 space-y-5">
+          <div>
+            <span class="text-[9px] text-gold-400 font-mono font-bold uppercase tracking-widest block mb-1">Direct Brain Diagnostics</span>
+            <h3 class="font-display font-medium text-white text-base">All India Ajay Open Practice Test (AJAOT)</h3>
+            <p class="text-xs text-white/55">
+              Take this brief mathematical trivia test to evaluate your readiness on JEE Limits & Functions. It will reveal your strong areas and predicted All India Rank.
+            </p>
+          </div>
+
+          <div class="space-y-4 text-xs font-sans">
+            <!-- Question 1 -->
+            <div class="bg-white/[0.02] border border-white/5 p-4 rounded-xl space-y-3">
+              <p class="font-semibold text-white/90">
+                1. What is the value of $\lim_{x \to 0} \frac{\sin(x) - x}{x^3}$?
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <label class="flex items-center gap-2.5 p-2 bg-slate-950 hover:bg-white/5 rounded-lg cursor-pointer transition-colors border border-white/5">
+                  <input type="radio" name="q1" value="A">
+                  <span>-1/6</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-2 bg-slate-950 hover:bg-white/5 rounded-lg cursor-pointer transition-colors border border-white/5">
+                  <input type="radio" name="q1" value="B">
+                  <span>0</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-2 bg-slate-950 hover:bg-white/5 rounded-lg cursor-pointer transition-colors border border-white/5">
+                  <input type="radio" name="q1" value="C">
+                  <span>1/6</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-2 bg-slate-950 hover:bg-white/5 rounded-lg cursor-pointer transition-colors border border-white/5">
+                  <input type="radio" name="q1" value="D">
+                  <span>Undefined</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="bg-white/[0.02] border border-white/5 p-4 rounded-xl space-y-3">
+              <p class="font-semibold text-white/90">
+                2. If $f(x) = [x]$ is the greatest integer function, is $f(x)$ continuous at $x = 1.5$?
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <label class="flex items-center gap-2.5 p-2 bg-slate-950 hover:bg-white/5 rounded-lg cursor-pointer transition-colors border border-white/5">
+                  <input type="radio" name="q2" value="A">
+                  <span>Yes, is perfectly continuous</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-2 bg-slate-950 hover:bg-white/5 rounded-lg cursor-pointer transition-colors border border-white/5">
+                  <input type="radio" name="q2" value="B">
+                  <span>No, Jump discontinuity</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-2 bg-slate-950 hover:bg-white/5 rounded-lg cursor-pointer transition-colors border border-white/5">
+                  <input type="radio" name="q2" value="C">
+                  <span>Continuous but not differentiable</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-2 bg-slate-950 hover:bg-white/5 rounded-lg cursor-pointer transition-colors border border-white/5">
+                  <input type="radio" name="q2" value="D">
+                  <span>Continuous at integers only</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <button onclick="submitQuiz()" class="px-5 py-2.5 bg-gold-400 hover:bg-gold-500 text-black font-extrabold text-xs uppercase tracking-wider rounded-lg active:scale-95 transition-all">
+              Grade Answers & AI Rank Diagnosis
+            </button>
+          </div>
+        </div>
+
+        <!-- QUIZ SCORE & DIAGNOSTICS LOG -->
+        <div id="quiz-result-wrapper" class="hidden premium-card rounded-xl p-6 space-y-5 bg-[#0C1510] border-emerald-900/40">
+          <div class="flex items-center justify-between border-b border-emerald-950 pb-3">
+            <span class="text-[10px] text-emerald-400 font-mono font-bold uppercase tracking-widest bg-emerald-950/50 px-2 py-0.5 rounded">
+              Analysis Complete
+            </span>
+            <i data-lucide="check-circle-2" class="text-emerald-400 w-5 h-5"></i>
+          </div>
+
+          <div class="space-y-4">
+            <h4 class="text-white text-base font-display">Your Score: <span id="quiz-score-val" class="font-mono text-emerald-400 font-extrabold">2 / 2 Correct</span></h4>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 font-mono text-[11px] text-white/70">
+              <div class="bg-black/30 p-2.5 rounded border border-white/5">
+                <span class="text-slate-400 block pb-1">PREDICTED ALL INDIA RANK</span>
+                <span class="text-gold-400 font-bold block text-sm">AIR ~140 (JEE Core Stream)</span>
+              </div>
+              <div class="bg-black/30 p-2.5 rounded border border-white/5">
+                <span class="text-slate-400 block pb-1">STRENGTHS & COMMENDATION</span>
+                <span class="text-emerald-400 font-bold block text-sm block">LCD approximation mastered</span>
+              </div>
+            </div>
+
+            <div class="border-t border-emerald-950 pt-3 space-y-2 text-xs">
+              <p class="text-gold-400 font-bold">AJAY SIR'S MENTORSHIP RECOMMENDATION:</p>
+              <p class="text-white/70 leading-relaxed text-[11px]">
+                Phenomenal scoring! Your limits sequence Taylor expansion rules are sharp. Maintain daily streaks by attempting our Advanced calculus assignments during your Pomodoro blocks.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FAQS COMPONENT SECTION -->
+  <section id="faq-sec" class="hidden bg-[#121212] border-t border-white/5 py-12">
+    <div class="max-w-4xl mx-auto px-4 space-y-6">
+      <h3 class="font-display font-bold text-white tracking-tight text-lg text-center uppercase">Ajay MathSphere Platform Help Desk</h3>
+      <div class="space-y-4 text-xs">
+        <div class="p-4 bg-slate-950 rounded-xl space-y-1">
+          <p class="font-semibold text-gold-400">Q: What makes Ajay MathSphere different?</p>
+          <p class="text-slate-300">A: Guided math visualization instead of tedious memorization of formula rules. Includes secure watermarked PDF handbooks and customized study station timers.</p>
+        </div>
+        <div class="p-4 bg-slate-950 rounded-xl space-y-1">
+          <p class="font-semibold text-gold-400">Q: Is DRM security active on standard files?</p>
+          <p class="text-slate-300">A: Yes, limits master notes contain personal dynamic watermarks tracking user session limits to protect integrity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVOLUTIONARY GLOBAL STATIC FOOTER -->
+  <footer class="border-t border-white/5 py-8 mt-12 bg-[#0A0A0A]">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-display font-bold text-white tracking-widest uppercase text-xs">
+          MATH<span class="text-gold-400">ELITE</span>
+        </span>
+        <span class="text-slate-600 text-xs">|</span>
+        <span class="text-slate-500 font-mono text-[10px]">© 2026 AJAY SIR ACADEMY. ALL RIGHTS RESERVED.</span>
+      </div>
+      <div class="flex items-center gap-4 text-[10px] text-white/40 uppercase tracking-[0.2em] font-mono">
+        <span>DRM SECURED</span>
+        <span class="text-slate-800">•</span>
+        <span>CLOUDFLARE SHIELD</span>
+        <span class="text-slate-800">•</span>
+        <span>HTML VERSION V2.0</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DYNAMIC INTERACTION JAVASCRIPT STATE ENGINE -->
+  <script>
+    // Tab switching controller
+    function switchMainTab(tabName) {
+      document.querySelectorAll('.tab-segment').forEach(el => el.classList.add('hidden'));
+      document.getElementById('tab-' + tabName).classList.remove('hidden');
+
+      // Update button colors
+      const tabs = ['lectures', 'doubts', 'quizzes'];
+      tabs.forEach(t => {
+        const btn = document.getElementById('btn-tab-' + t);
+        if (t === tabName) {
+          btn.className = "px-5 py-3 text-xs font-medium font-mono text-gold-400 border-b-2 border-gold-400 tracking-wider uppercase transition-colors shrink-0";
+        } else {
+          btn.className = "px-5 py-3 text-xs font-medium font-mono text-white/60 hover:text-white hover:border-b-2 hover:border-white/20 tracking-wider uppercase transition-colors shrink-0";
+        }
+      });
+    }
+
+    // DRM PDF Viewer display limits
+    function revealPdf(pdfId) {
+      const panel = document.getElementById('drm-panel');
+      const titleEl = document.getElementById('drm-pdf-title');
+      
+      panel.classList.remove('hidden');
+      if (pdfId === 'pdf-1') {
+        titleEl.textContent = "Limits Master Class Notes - Handwritten with Ajay Sir's Smart Hacks";
+      } else {
+        titleEl.textContent = "Newton-Leibniz Double Integrals & Squeeze Limits DPP Assignment File";
+      }
+      
+      // Auto scroll to panel
+      panel.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function closeDrm() {
+      document.getElementById('drm-panel').classList.add('hidden');
+    }
+
+    // Doubt system simulator
+    function applyPrompt(text) {
+      document.getElementById('ai-doubt-text').value = text;
+    }
+
+    function solveDoubt() {
+      const txt = document.getElementById('ai-doubt-text').value.trim();
+      if (!txt) return;
+
+      const outputWrapper = document.getElementById('ai-doubt-result-wrapper');
+      const outputEl = document.getElementById('ai-doubt-output');
+      
+      outputWrapper.classList.remove('hidden');
+      outputEl.innerHTML = `
+        <div class="flex items-center gap-2 text-slate-400 py-3">
+          <i data-lucide="refresh-cw" class="w-4 h-4 animate-spin text-gold-400"></i>
+          <span>Computing limits derivatives and applying Ajay Sir's Smart Hacks...</span>
+        </div>
+      `;
+      lucide.createIcons(); // Hydrate loader icon
+
+      setTimeout(() => {
+        outputEl.innerHTML = `
+          <div class="space-y-3">
+            <h5 class="font-bold text-gold-400 text-sm">1. Core Advanced Mathematical Concept:</h5>
+            <p class="text-white/80 leading-relaxed pl-3 border-l border-gold-500/30">
+              For complex limits of the form <code class="bg-[#121212] px-1 py-0.5 rounded font-mono text-gold-300">0/0</code>, Taylor expansion offers immediate dimensional scaling of components, avoiding multiple tedious L'Hospital differentiations where calculation mistakes frequently occur.
+            </p>
+
+            <h5 class="font-bold text-gold-400 text-sm mt-4">2. Detailed Step-by-Step Proof Layout:</h5>
+            <div class="bg-[#121212] p-3 rounded-lg border border-white/5 space-y-1.5 font-mono text-[11px] text-white/90">
+              <p>&bull; Expand sin(x): sin(x) &approx; x - x&sup3;/6 + x&sup5;/120 - ...</p>
+              <p>&bull; Numerator expansion: (sin(x) - x) &approx; -x&sup3;/6 + x&sup5;/120</p>
+              <p>&bull; Dividing by denominator x&sup3; gives: (-x&sup3;/6 + terms) / x&sup3;</p>
+              <p>&bull; Evaluates precisely to: <b>-1/6</b> as x approaches 0.</p>
+            </div>
+
+            <h5 class="font-bold text-red-400 text-sm mt-4 flex items-center gap-1">
+              <i data-lucide="alert-triangle" class="w-4 h-4"></i> Ajay Sir's Competitive Trap Advice:
+            </h5>
+            <p class="text-white/70 pl-3 border-l border-red-500/30">
+              Aspirants frequently confuse positive coordinates with coefficients of higher dimensions. Verify denominators before setting continuous limits. Double check signs!
+            </p>
+          </div>
+        `;
+        lucide.createIcons();
+      }, 1000);
+    }
+
+    // Pomodoro Timer controls
+    let pomoInterval;
+    let pomoSeconds = 1500; // 25 minutes
+    let pomoRunning = false;
+
+    function togglePomodoro() {
+      const btnText = document.getElementById('pomo-btn-text');
+      const btnTrigger = document.getElementById('pomo-btn-trigger');
+      
+      if (pomoRunning) {
+        clearInterval(pomoInterval);
+        pomoRunning = false;
+        btnText.textContent = "Start Block";
+        btnTrigger.classList.remove('bg-red-500');
+        btnTrigger.classList.add('bg-gold-400');
+      } else {
+        pomoRunning = true;
+        btnText.textContent = "Pause Block";
+        btnTrigger.classList.remove('bg-gold-400');
+        btnTrigger.classList.add('bg-red-500');
+        pomoInterval = setInterval(() => {
+          if (pomoSeconds > 0) {
+            pomoSeconds--;
+            updatePomoClock();
+          } else {
+            clearInterval(pomoInterval);
+            pomoRunning = false;
+            alert("📚 Excellent focus chunk complete! Take a brief recovery walk now.");
+            resetPomodoro();
+          }
+        }, 1000);
+      }
+    }
+
+    function resetPomodoro() {
+      clearInterval(pomoInterval);
+      pomoRunning = false;
+      pomoSeconds = 1500;
+      updatePomoClock();
+      document.getElementById('pomo-btn-text').textContent = "Start Block";
+      const btnTrigger = document.getElementById('pomo-btn-trigger');
+      btnTrigger.classList.remove('bg-red-500');
+      btnTrigger.classList.add('bg-gold-400');
+    }
+
+    function updatePomoClock() {
+      const mins = Math.floor(pomoSeconds / 60);
+      const secs = pomoSeconds % 60;
+      document.getElementById('pomo-clock').textContent = 
+        (mins < 10 ? '0' : '') + mins + ':' + (secs < 10 ? '0' : '') + secs;
+    }
+
+    // Interactive Quiz Score
+    function submitQuiz() {
+      const q1Ans = document.querySelector('input[name="q1"]:checked');
+      const q2Ans = document.querySelector('input[name="q2"]:checked');
+
+      if (!q1Ans || !q2Ans) {
+        alert("Please complete both diagnostic quiz answers before submission.");
+        return;
+      }
+
+      let score = 0;
+      if (q1Ans.value === "A") score++;
+      if (q2Ans.value === "A") score++;
+
+      const resBox = document.getElementById('quiz-result-wrapper');
+      const scoreVal = document.getElementById('quiz-score-val');
+      
+      resBox.classList.remove('hidden');
+      scoreVal.textContent = score + " / 2 Correct";
+      
+      resBox.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function toggleFaq() {
+      const faqSec = document.getElementById('faq-sec');
+      faqSec.classList.toggle('hidden');
+      faqSec.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Initialize initial lucide icons immediately
+    lucide.createIcons();
+  </script>
+</body>
+</html>
